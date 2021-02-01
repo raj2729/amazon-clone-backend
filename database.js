@@ -5,8 +5,9 @@ const assert = require('assert');
 // Comes inbuilt in nodejs
 // Can check a Condition and generate Output accordingly
 
-const url = process.env.URL;// For Cloud Database
-// const url = process.env.DB_URL_LOCAL;// For connecting with local database
+// const url = process.env.URL;// For Cloud Database
+// While using Cloud database ensure that .env file has correct password and dbname
+const url = process.env.DB_URL_LOCAL;// For connecting with local database
 
 mongoose.connect(
     url,

@@ -9,10 +9,13 @@ const database = require('./database');
 const app=express();
 const port=process.env.PORT;
 
+// User Routes
+const userRoutes = require('./routes/users')
+
 // Middlewares
 app.use(cors());
 app.use(morgan('dev'));
-
+app.use('/api/users' , userRoutes);
 
 
 // Routes

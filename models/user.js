@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 // profile_pic => String => urlof that
 // Instead of timestamps
-createdAt:{
-    type:String,
-    default:moment().format("DD/MM/YYYY") + moment().format("hh:mm:ss")
-}
+// createdAt:{
+//     type:String,
+//     default:moment().format("DD/MM/YYYY") + moment().format("hh:mm:ss")
+// }
 
 const userSchema = new Schema({
     userName:{
