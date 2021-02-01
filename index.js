@@ -4,12 +4,14 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const database = require('./database');
+
 const app=express();
 const port=process.env.PORT;
 
 // Middlewares
 app.use(cors());
-app.use(morgan());
+app.use(morgan('dev'));
 
 
 
