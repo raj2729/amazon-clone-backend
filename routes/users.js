@@ -24,5 +24,40 @@ router.get('/' , (req,res) => {
 
 })
 
+
+
+// Users register route
+// Access : Public
+// url : http://localhost:80/api/users/register
+
+// Inside the check , you have to write what you have written in input field in that name=""
+router.post('/register' , 
+    // express-validator
+    // check empty fields
+
+    [ 
+        check('name').not().isEmpty().trim().escape(),
+        check('password').not().isEmpty().trim().escape(),
+        // check email
+        check('email').isEmail().normalizeEmail()
+    ] 
+    , 
+    (req,res) => {
+        const error=validationResult(req);
+        if(!error.isEmpty()){
+            return res.status(400).json({
+                "status":false,
+                "error":error.array()// For multiple errors
+
+            })
+        }else{
+            return res.status(200).json({
+                "status":true,
+                "data":req.body
+            })
+        }
+    }
+)
+
 module.exports = router;
 
