@@ -10,7 +10,7 @@ const app=express();
 const port=process.env.PORT;
 
 // User Routes
-const userRoutes = require('./routes/users')
+const userRoutes = require('./routes/userRoutes')
 
 // Middlewares
 app.use(cors());
